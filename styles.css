@@ -1,0 +1,188 @@
+/* ============================================================
+   ROOT VARIABLES (Theme Colors)
+   ============================================================ */
+:root {
+  --bg:#f7faf9;;
+  --panel:#eef4f1;
+  --brand:#22c55e;
+  --ink:#1f2937;
+  --muted:#64748b;
+  --card:#ffffff;
+  --ring: rgba(34, 197, 94, .25);
+}
+
+/* ============================================================
+   GLOBAL RESET & BASE STYLES
+   ============================================================ */
+* { box-sizing:border-box }
+
+html,body {
+  margin:0;
+  padding:0;
+  font-family:system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,Cantarell,"Helvetica Neue",Arial;
+  color:var(--ink);
+  background:linear-gradient(180deg,#f7faf9 0%, #eef4f1 100%);
+}
+
+.container { width:min(1100px,92%); margin-inline:auto }
+.narrow    { width:min(760px,92%); }
+
+/* ============================================================
+   NAVIGATION BAR
+   ============================================================ */
+.nav {
+  position:sticky; top:0;
+  backdrop-filter:saturate(1.2) blur(6px);
+  background:rgba(255,255,255,.65);
+  border-bottom:1px solid rgba(2,6,23,.08);
+  z-index:50;
+}
+.nav__inner {
+  display:flex; align-items:center; justify-content:space-between;
+  min-height:64px; gap:1rem;
+}
+.brand { display:flex; align-items:center; gap:.5rem; text-decoration:none; color:var(--ink) }
+.brand__logo {
+  height: 110px;   /* adjust size as needed */
+  width: auto;
+  display: inline-block;
+  vertical-align: middle;
+}
+
+.brand__name { font-weight:700; letter-spacing:.2px }
+.nav__links a { color:var(--ink); text-decoration:none; margin-inline:.75rem }
+.nav__links a.btn { margin-left:1rem }
+
+/* ============================================================
+   HERO SECTION
+   ============================================================ */
+.hero {
+  padding:64px 0 36px;
+  border-bottom:1px solid rgba(2,6,23,.06);
+}
+.hero__inner {
+  display:grid; grid-template-columns:1.2fr .8fr; gap:32px; align-items:center;
+}
+.hero__copy h1 {
+  font-size:clamp(28px,4vw,44px);
+  margin:0 0 .5rem;
+}
+.hero__copy p { color:var(--muted); margin:0 0 1rem }
+.hero__cta { display:flex; gap:.75rem; margin:1rem 0 }
+.hero__badges {
+  display:flex; flex-wrap:wrap; gap:.75rem;
+  padding:0; margin:1rem 0 0; list-style:none;
+}
+.hero__card {
+  background:linear-gradient(180deg,#ffffff 0%, #f5f7f5 100%);
+  border:1px solid rgba(2,6,23,.08);
+  padding:1.25rem; border-radius:16px;
+  box-shadow:0 10px 30px rgba(0,0,0,.3);
+}
+.hero__card h3 { margin:.25rem 0 }
+.hero__card .btn--full { display:block; width:100%; text-align:center; margin:.5rem 0 0 }
+
+/* ============================================================
+   SECTIONS & GRIDS
+   ============================================================ */
+.section { padding:56px 0 }
+.section--alt {
+  background:rgba(2,6,23,.02);
+  border-block:1px solid rgba(2,6,23,.06);
+}
+
+.grid { display:grid; gap:18px }
+.grid.two { grid-template-columns:repeat(2,1fr) }
+
+@media (max-width:860px) {
+  .hero__inner,.grid.two { grid-template-columns:1fr }
+}
+
+.cards { grid-template-columns:repeat(auto-fit,minmax(220px,1fr)) }
+.card {
+  background:var(--card);
+  border:1px solid rgba(2,6,23,.08);
+  padding:18px; border-radius:14px;
+}
+
+/* ============================================================
+   LISTS & STATS
+   ============================================================ */
+.list-check { padding-left:1.1rem }
+.list-check li { margin:.4rem 0 }
+
+.statbox { display:grid; grid-template-columns:repeat(3,1fr); gap:12px }
+.stat { display:block; font-weight:800; font-size:clamp(22px,4vw,34px) }
+.label { color:var(--muted); font-size:.9rem }
+
+/* ============================================================
+   FORMS & FIELDS
+   ============================================================ */
+.field { display:flex; flex-direction:column; gap:.4rem }
+.field input,.field select,.field textarea {
+  background:#ffffff; color:var(--ink);
+  border:1px solid rgba(2,6,23,.12);
+  padding:.7rem .8rem; border-radius:10px; outline:none;
+}
+.field input:focus,.field select:focus,.field textarea:focus {
+  border-color:var(--brand);
+  box-shadow:0 0 0 4px var(--ring);
+}
+.field span { font-size:.95rem }
+.error { color:#fda4af; min-height:1.1em }
+
+.checkbox { display:flex; align-items:center; gap:.6rem; margin:.6rem 0 1rem }
+.checkbox input { accent-color:var(--brand) }
+
+/* ============================================================
+   BUTTONS
+   ============================================================ */
+.btn {
+  display:inline-flex; align-items:center; justify-content:center; gap:.5rem;
+  padding:.7rem 1rem; border-radius:999px;
+  text-decoration:none; border:1px solid transparent;
+  cursor:pointer; font-weight:600;
+}
+.btn--primary { background:var(--brand); color:#06250f; border-color:transparent }
+.btn--ghost { background:transparent; border-color:rgba(2,6,23,.16); color:var(--ink) }
+.btn--full    { width:100% }
+
+/* ============================================================
+   UTILITIES
+   ============================================================ */
+.muted { color:var(--muted) }
+
+/* ============================================================
+   FOOTER
+   ============================================================ */
+.footer {
+  border-top:1px solid rgba(2,6,23,.08);
+  padding:40px 0;
+}
+.footer__inner {
+  display:grid; gap:18px;
+  grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+}
+/* Card Images */
+.card__img {
+  width: 100%;
+  height: 140px;       /* adjust height */
+  object-fit: cover;   /* crop nicely */
+  border-radius: 8px 8px 0 0; /* rounded top corners */
+  margin-bottom: 10px;
+}
+/* Ensure footer and muted text are still styled properly */
+.footer-note {
+  font-size: 0.9rem;  /* ~14px, passes Lighthouse */
+  color: var(--muted);
+}
+
+.muted {
+  font-size: 0.95rem; /* ~15px */
+}
+
+.error {
+  font-size: 0.9rem;  /* ensure error messages are legible */
+  color: #fda4af;
+}
+

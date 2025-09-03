@@ -1,0 +1,157 @@
+<!doctype html>
+<html lang="en-us, es-mx">
+<head>
+  <!-- ============================================================
+       META & HEAD CONFIGURATION
+       ============================================================ -->
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width,initial-scale=1"/>
+  <title>Get a Quote | Suarez Cleaning Services LLC (OC)</title>
+  <meta name="description" content="Request a janitorial service quote in Orange County. We'll text you back quickly.">
+  <link rel="stylesheet" href="styles.css"/>
+</head>
+<body>
+
+  <!-- ============================================================
+       NAVIGATION BAR
+       ============================================================ -->
+  <header class="nav">
+    <div class="container nav__inner">
+      <a class="brand" href="index.html">
+        <img src="images/SuarezCS_logo.png" alt="Suarez Cleaning Logo" class="brand__logo">
+        <span class="brand__name">Suarez Cleaning Services LLC</span>
+      </a>
+      <nav class="nav__links">
+        <a href="index.html#services">Services</a>
+        <a href="index.html#why-us">Why Us</a>
+        <a href="index.html#areas">Areas</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- ============================================================
+       MAIN CONTENT: QUOTE FORM
+       ============================================================ -->
+  <main class="section">
+    <div class="container narrow">
+      <h1>Request a Free Quote</h1>
+      <p class="muted">Fill this out (2-3 minutes). We'll confirm details by text.</p>
+
+      <!-- ======================= FORM ======================= -->
+      <form id="quoteForm" novalidate>
+        <!-- Fields Grid (2 columns on desktop) -->
+        <div class="grid two">
+          <!-- Name -->
+          <label class="field">
+            <span>Full Name*</span>
+            <input type="text" name="name" required minlength="2" placeholder="Jane Doe"/>
+            <span class="error"></span>
+          </label>
+
+          <!-- Company (optional) -->
+          <label class="field">
+            <span>Company (optional)</span>
+            <input type="text" name="company" placeholder="Acme, Inc."/>
+          </label>
+
+          <!-- Phone -->
+          <label class="field">
+            <span>Phone*</span>
+            <input type="tel" name="phone" required placeholder="(949) 555-1234"/>
+            <span class="error"></span>
+          </label>
+
+          <!-- Email -->
+          <label class="field">
+            <span>Email*</span>
+            <input type="email" name="email" required placeholder="you@company.com"/>
+            <span class="error"></span>
+          </label>
+
+          <!-- City -->
+          <label class="field">
+            <span>City*</span>
+            <input type="text" name="city" required placeholder="Irvine"/>
+            <span class="error"></span>
+          </label>
+
+          <!-- Preferred Contact Time -->
+          <label class="field">
+            <span>Preferred Contact Time</span>
+            <select name="contactTime">
+              <option value="">Any time</option>
+              <option>Morning (8-12)</option>
+              <option>Afternoon (12-4)</option>
+              <option>Evening (4-7)</option>
+            </select>
+          </label>
+
+          <!-- Service Type -->
+          <label class="field">
+            <span>Service Type*</span>
+            <select name="service" required>
+              <option value="">Select…</option>
+              <option>Nightly Janitorial</option>
+              <option>Office Cleaning</option>
+              <option>Floor Care</option>
+              <option>Post-Construction</option>
+              <option>Move-In/Out</option>
+              <option>Day Porter</option>
+            </select>
+            <span class="error"></span>
+          </label>
+
+          <!-- Size (optional) -->
+          <label class="field">
+            <span>Sq Ft / # of Rooms (optional)</span>
+            <input type="text" name="size" placeholder="e.g. 7,500 sq ft"/>
+          </label>
+        </div>
+
+        <!-- Notes / Message -->
+        <label class="field">
+          <span>Notes</span>
+          <textarea name="message" rows="5" placeholder="Tell us about schedule, access, or any special requirements…"></textarea>
+        </label>
+
+        <!-- Consent (TCPA-style) -->
+        <label class="checkbox">
+          <input type="checkbox" name="consent" required />
+          <span>I agree to receive a text message and/or call about my request. Standard rates may apply.</span>
+        </label>
+
+        <!-- Submit + Status -->
+        <button class="btn btn--primary" type="submit">Send Request</button>
+        <p id="formStatus" class="muted" role="status" aria-live="polite" style="margin-top:0.75rem;"></p>
+      </form>
+      <!-- ===================== END FORM ===================== -->
+    </div>
+  </main>
+
+  <!-- ============================================================
+       FOOTER
+       ============================================================ -->
+  <footer class="footer">
+    <div class="container footer__inner">
+      <!-- Column 1: Business Info -->
+      <div class="footer__col">
+        <strong> Suarez Cleaning Services LLC. All rights reserved </strong><br/>
+        Orange County, CA
+      </div>
+      <!-- Column 2: Quick Link -->
+      <div class="footer__col">
+        <a href="index.html">Home</a>
+      </div>
+      <!-- Column 3: Copyright -->
+      <div class="footer__col">
+        <span>© <span id="year"></span> Suarez Cleaning Services LLC. All rights reserved | Created by Codevo Studio</span>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ============================================================
+       JAVASCRIPT (validation, submission handler, dynamic year)
+       ============================================================ -->
+  <script src="main.js" defer></script>
+</body>
+</html>
