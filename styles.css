@@ -185,4 +185,36 @@ html,body {
   font-size: 0.9rem;  /* ensure error messages are legible */
   color: #fda4af;
 }
+/* ============================================================
+   THANK YOU PAGE STYLES
+   ============================================================ */
+.thankyou {
+  text-align: center;
+  padding: 80px 20px;
+}
+
+.thankyou h1 {
+  font-size: 2rem;
+  margin-bottom: 16px;
+}
+
+.thankyou p {
+  font-size: 1.125rem;
+  margin-bottom: 24px;
+  color: var(--muted);
+}
+
+.thankyou .btn {
+  text-decoration: none;
+  padding: 12px 24px;
+  background: var(--brand);
+  color: #fff;
+  border-radius: 8px;
+  font-weight: 600;
+  transition: background 0.2s ease-in-out;
+}
+
+.thankyou .btn:hover {
+  background: #16a34a; /* slightly darker green */
+}
 
