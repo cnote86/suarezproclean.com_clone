@@ -83,14 +83,13 @@ if (form) {
     if (!ok) return;
 
     // ------------------------------------------------------------
-    // NEW WhatsApp Cloud API handler
+    // SUBMIT TO PHP HANDLER (send-form.php)
     // ------------------------------------------------------------
     try {
       status.textContent = "Sending…";
-      const res = await fetch("send-whatsapp.php", {
+      const res = await fetch("send-form.php", {
         method: "POST",
-        headers: {"Content-Type":"application/json"},
-        body: JSON.stringify(data)
+        body: new URLSearchParams(data) // send as form-urlencoded
       });
       if (!res.ok) throw new Error(await res.text());
 
